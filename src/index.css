@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Roboto", "Times New Roman", Times, serif;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #e5e5e5;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+@media (width >= 48rem) {
+  body {
+    padding: 24px;
+    padding-bottom: 0px;
+  }
+}
+
+@media (width >= 64rem) {
+  body {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.print-container {
+  width: 100%;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    page-break-after: always;
+    break-after: page;
+    box-shadow: none;
+    margin: 0 auto;
+    width: auto;
+    min-height: auto;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  .print-container {
+    width: 240mm;
+  }
+}
